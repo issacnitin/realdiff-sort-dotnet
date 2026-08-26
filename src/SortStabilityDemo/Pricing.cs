@@ -1,3 +1,5 @@
+using SortStabilityDemo.Configuration;
+
 namespace SortStabilityDemo;
 
 public readonly record struct DiscountRule(string Code, int Priority, decimal MinimumTotal, decimal Rate);
@@ -7,7 +9,7 @@ public static class RuleOrdering
     public static IReadOnlyList<DiscountRule> ByPriority(IEnumerable<DiscountRule> rules)
     {
         var ordered = rules.OrderBy(rule => rule.Priority);
-        return SortConfiguration.BreakPriorityTiesByCode
+        return SortConfiguration.ShouldBreakPriorityTiesByCode()
             ? ordered.ThenBy(rule => rule.Code, StringComparer.Ordinal).ToArray()
             : ordered.ToArray();
     }

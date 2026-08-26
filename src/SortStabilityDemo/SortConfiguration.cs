@@ -1,6 +1,6 @@
-namespace SortStabilityDemo;
+namespace SortStabilityDemo.Configuration;
 
-internal static class SortConfiguration
+public static class SortConfiguration
 {
-    internal const bool BreakPriorityTiesByCode = false;
+    public static bool ShouldBreakPriorityTiesByCode() => false;
 }

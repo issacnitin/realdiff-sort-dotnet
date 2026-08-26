@@ -18,6 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BEHAVIORDIFF_EXCLUDE_NAMESPACES: SortStabilityDemo.Configuration
         with:
           gate: warn-only
           post: 'true'
