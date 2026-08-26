@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AA00A618-3A58-4F15-B7B1-7B50E331A0A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortStabilityDemo", "src\SortStabilityDemo\SortStabilityDemo.csproj", "{98AB51A4-19D9-4DE1-BA5B-D415A16C8B91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4E59BEEF-96D9-4431-A026-340F1030BAA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortStabilityDemo.Tests", "tests\SortStabilityDemo.Tests\SortStabilityDemo.Tests.csproj", "{CB984E7E-FC82-4D2B-BCCF-7AC4A149588B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98AB51A4-19D9-4DE1-BA5B-D415A16C8B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98AB51A4-19D9-4DE1-BA5B-D415A16C8B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98AB51A4-19D9-4DE1-BA5B-D415A16C8B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98AB51A4-19D9-4DE1-BA5B-D415A16C8B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB984E7E-FC82-4D2B-BCCF-7AC4A149588B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB984E7E-FC82-4D2B-BCCF-7AC4A149588B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB984E7E-FC82-4D2B-BCCF-7AC4A149588B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB984E7E-FC82-4D2B-BCCF-7AC4A149588B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98AB51A4-19D9-4DE1-BA5B-D415A16C8B91} = {AA00A618-3A58-4F15-B7B1-7B50E331A0A6}
+		{CB984E7E-FC82-4D2B-BCCF-7AC4A149588B} = {4E59BEEF-96D9-4431-A026-340F1030BAA8}
+	EndGlobalSection
+EndGlobal
