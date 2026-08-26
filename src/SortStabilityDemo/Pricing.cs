@@ -37,18 +37,3 @@ public sealed class CheckoutTotals
         return listPrice * (1m - selected.Rate);
     }
 }
-
-public static class CoverageVolume
-{
-    public static int Exercise()
-    {
-        var total = 0;
-        for (var index = 0; index < 40; index++)
-        {
-            total += Normalize(index);
-        }
-        return total;
-    }
-
-    private static int Normalize(int value) => value + 1;
-}
