@@ -14,11 +14,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: issacnitin/RealDiff@v0.4.0
+      - uses: issacnitin/RealDiff@9c9a7fad069a122afce6a3410451b9fd01e53ed3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          REALDIFF_EXCLUDE_NAMESPACES: SortStabilityDemo.Configuration
+          REALDIFF_EXCLUDE_NAMESPACES: SortStabilityDemo.Sorting
         with:
           gate: warn-only
           post: 'true'

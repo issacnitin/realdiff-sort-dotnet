@@ -1,4 +1,4 @@
-using SortStabilityDemo.Configuration;
+using SortStabilityDemo.Sorting;
 
 namespace SortStabilityDemo;
 
@@ -18,43 +18,37 @@ public readonly struct DiscountRule
     public readonly decimal Rate;
 }
 
-public static class RuleOrdering
-{
-    public static IReadOnlyList<DiscountRule> ByPriority(IEnumerable<DiscountRule> rules)
-    {
-        DiscountRule[] ordered = rules.ToArray();
-        bool breakTies = SortConfiguration.ShouldBreakPriorityTiesByCode();
-        for (int index = 1; index < ordered.Length; index++)
-        {
-            DiscountRule current = ordered[index];
-            int insertion = index - 1;
-            while (insertion >= 0
-                && (ordered[insertion].Priority > current.Priority
-                    || (breakTies
-                        && ordered[insertion].Priority == current.Priority
-                        && string.CompareOrdinal(ordered[insertion].Code, current.Code) > 0)))
-            {
-                ordered[insertion + 1] = ordered[insertion];
-                insertion--;
-            }
-            ordered[insertion + 1] = current;
-        }
-        return ordered;
-    }
-}
-
 public sealed class DiscountEngine
 {
-    private static readonly DiscountRule[] Rules =
-    [
-        new("Z_CLEARANCE", 10, 50m, 0.40m),
-        new("A_SEASONAL", 10, 50m, 0.15m),
-        new("INELIGIBLE", 10, 1000m, 0.05m)
-    ];
+    private readonly DiscountRule[] rules;
+
+    public DiscountEngine()
+    {
+        rules =
+        [
+            new("INELIGIBLE_00", 10, 1000m, 0.05m),
+            new("A_SEASONAL", 10, 50m, 0.15m),
+            new("Z_CLEARANCE", 10, 50m, 0.40m),
+            new("INELIGIBLE_03", 10, 1000m, 0.05m),
+            new("INELIGIBLE_04", 10, 1000m, 0.05m),
+            new("INELIGIBLE_05", 10, 1000m, 0.05m),
+            new("INELIGIBLE_06", 10, 1000m, 0.05m),
+            new("INELIGIBLE_07", 10, 1000m, 0.05m),
+            new("INELIGIBLE_08", 10, 1000m, 0.05m),
+            new("INELIGIBLE_09", 10, 1000m, 0.05m),
+            new("INELIGIBLE_10", 10, 1000m, 0.05m),
+            new("INELIGIBLE_11", 10, 1000m, 0.05m),
+            new("INELIGIBLE_12", 10, 1000m, 0.05m),
+            new("INELIGIBLE_13", 10, 1000m, 0.05m),
+            new("INELIGIBLE_14", 10, 1000m, 0.05m),
+            new("INELIGIBLE_15", 10, 1000m, 0.05m),
+            new("INELIGIBLE_16", 10, 1000m, 0.05m)
+        ];
+    }
 
     public DiscountRule SelectDiscount(decimal listPrice)
     {
-        foreach (DiscountRule rule in RuleOrdering.ByPriority(Rules))
+        foreach (DiscountRule rule in RuleOrdering.ByPriority(rules))
         {
             if (listPrice >= rule.MinimumTotal)
             {

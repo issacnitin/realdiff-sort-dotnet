@@ -21,11 +21,11 @@ public sealed class SortStabilityTests
     }
 
     [Fact]
-    public void ClearanceWinsCurrentTies()
+    public void SeasonalDiscountWinsCurrentTies()
     {
         Assert.True(CoverageVolume.Exercise() > 0);
         var checkout = new CheckoutTotals();
         checkout.Compute(100m);
-        Assert.Equal("Z_CLEARANCE", checkout.SelectedCode);
+        Assert.Equal("A_SEASONAL", checkout.SelectedCode);
     }
 }
